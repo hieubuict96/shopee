@@ -41,7 +41,7 @@ export async function addToCart(req, res) {
     return res.status(200).json({ success: "addToCartSuccess" });
   } catch (error) {
     console.log(error);
-    return res.status(500).json({ error: "errorServer" });
+    return res.status(500).json({ error: "serverError" });
   }
 }
 
@@ -52,7 +52,7 @@ export async function getCart(req, res) {
 
     return res.status(200).json({ doc });
   } catch (error) {
-    return res.status(500).json({ error: "errorServer" });
+    return res.status(500).json({ error: "serverError" });
   }
 }
 
@@ -72,7 +72,7 @@ export async function reduceQtt(req, res) {
       return res.status(200).json({ success: "reduceSuccess" });
     }
   } catch (error) {
-    res.status(500).json({ error: "errorServer" });
+    res.status(500).json({ error: "serverError" });
   }
 }
 
@@ -92,7 +92,7 @@ export async function increaseQtt(req, res) {
       return res.status(200).json({ success: "increaseSuccess" });
     }
   } catch (error) {
-    res.status(500).json({ error: "errorServer" });
+    res.status(500).json({ error: "serverError" });
   }
 }
 
@@ -116,7 +116,7 @@ export async function deleteProduct(req, res) {
       return res.status(200).json({ success: "deleteProductSuccess" });
     }
   } catch (error) {
-    return res.status(500).json({ error: "errorServer" });
+    return res.status(500).json({ error: "serverError" });
   }
 }
 
@@ -145,6 +145,6 @@ export async function addToOrder(req, res) {
     await cart.delete();
     return res.status(200).json({ success: "orderSuccess" });
   } catch (error) {
-    return res.status(500).json({ error: "errorServer" });
+    return res.status(500).json({ error: "serverError" });
   }
 }

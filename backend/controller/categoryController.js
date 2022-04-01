@@ -24,6 +24,6 @@ export async function getCategory(req, res) {
     const categories = await Category.find();
     res.status(200).json({ categories, isVerifyFail });
   } catch (error) {
-    res.status(500).json({ error: "errorServer" });
+    res.status(500).json({ error: "serverError" });
   }
 }

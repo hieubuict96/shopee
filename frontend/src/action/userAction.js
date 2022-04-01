@@ -410,7 +410,7 @@ export const verifyCodeAction =
       });
       setIsUpdateEmailSuccess(true);
     } catch (error) {
-      if (error.response.data.error === "errorServer") {
+      if (error.response.data.error === "serverError") {
         return alert("Đã xảy ra lỗi phía máy chủ, vui lòng thử lại sau");
       }
 

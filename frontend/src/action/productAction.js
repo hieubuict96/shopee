@@ -84,7 +84,7 @@ export const addProductAction =
         return setError("quantity");
       }
 
-      if (error.response.data.error === "errorServer") {
+      if (error.response.data.error === "serverError") {
         alert("Đã xảy ra lỗi phía máy chủ, vui lòng thử lại sau");
       }
     }

@@ -561,6 +561,7 @@ export async function sendCodeToEmail(req, res) {
       }
     );
   } catch (error) {
+    console.log(error);
     if (errorStep === 1 || errorStep === 2) {
       return res.status(500).json({ error: "serverError" });
     }
@@ -575,7 +576,7 @@ export async function verifyCodeUpdateEmail(req, res) {
       const codeDataOld = await Code.findOne({ email: oldEmail });
       const codeDataNew = await Code.findOne({ email: newEmail });
       if (!codeDataOld || !codeDataNew)
-        return res.status(500).json({ error: "errorServer" });
+        return res.status(500).json({ error: "serverError" });
 
       const timeNow = Date.now();
       if (
@@ -598,13 +599,13 @@ export async function verifyCodeUpdateEmail(req, res) {
         { new: true }
       );
 
-      if (!newDoc) return res.status(500).json({ error: "errorServer" });
+      if (!newDoc) return res.status(500).json({ error: "serverError" });
 
       return res.status(200).json({ success: "updateEmailSuccess" });
     } else {
       const codeDataNew = await Code.findOne({ email: newEmail });
       if (!codeDataNew) {
-        return res.status(500).json({ error: "errorServer" });
+        return res.status(500).json({ error: "serverError" });
       }
 
       const timeNow = Date.now();
@@ -623,11 +624,11 @@ export async function verifyCodeUpdateEmail(req, res) {
         { new: true }
       );
 
-      if (!newDoc) return res.status(500).json({ error: "errorServer" });
+      if (!newDoc) return res.status(500).json({ error: "serverError" });
 
       return res.status(200).json({ success: "updateEmailSuccess" });
     }
   } catch (error) {
-    res.status(500).json({ error: "errorServer" });
+    res.status(500).json({ error: "serverError" });
   }
 }

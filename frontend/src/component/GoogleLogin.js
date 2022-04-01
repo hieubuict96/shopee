@@ -27,12 +27,7 @@ const GoogleDiv = styled.div`
   }
 `;
 
-// const clientId =
-//   "961704671013-ka03sek4vf04j7ml41jcvgavev06cm95.apps.googleusercontent.com";
-
-const clientId = "414401859048-nvjs8if3im0s5ia0fls6qlhthpn54rjn.apps.googleusercontent.com";
-
-// const clientId = "381491792472-tr2a3l81684pb2jjudk0jfo8iarb6sed.apps.googleusercontent.com";
+const clientId = "436171074616-2dg2o44m43h01qiu08sla72lbspc01kh.apps.googleusercontent.com";
 
 export default function LoginGoogle() {
   const dispatch = useDispatch();

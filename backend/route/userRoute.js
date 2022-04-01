@@ -21,7 +21,6 @@ import {
   sendCodeToEmail,
   verifyCodeUpdateEmail,
 } from "../controller/userController.js";
-import Product from "../model/productModel.js";
 
 import { insertCart } from "../controller/insert.js";
 
@@ -55,13 +54,7 @@ router.post(
 router.post("/a", insertCart);
 
 router.get("/c", (req, res) => {
-  Product.findById("61f6a1014f212356e415b7dc").exec((e, u) => {
-    u.order = [
-
-    ]
-
-    u.save();
-  })
+  throw new Error("fsdf");
 });
 
 export default router;

@@ -12,7 +12,7 @@ export async function getFlashSale(req, res) {
 
     return res.status(200).json({ productsSale, isVerifyFail });
   } catch (error) {
-    return res.status(500).json({ error: "errorServer" });
+    return res.status(500).json({ error: "serverError" });
   }
 }
 
@@ -22,7 +22,7 @@ export async function getAllProductsSeller(req, res) {
     const productsListSeller = await Product.find({ shop: userId });
     return res.status(200).json({ productsListSeller });
   } catch (error) {
-    res.status(500).send({ error: "errorServer" });
+    res.status(500).send({ error: "serverError" });
   }
 }
 
@@ -73,7 +73,7 @@ export async function addProduct(req, res) {
       );
     });
 
-    return res.status(500).json({ error: "errorServer" });
+    return res.status(500).json({ error: "serverError" });
   }
 }
 
@@ -95,6 +95,6 @@ export async function getAllProductsCustomer(req, res) {
     const products = await Product.find({});
     return res.status(200).json({ products })
   } catch (error) {
-    return res.status(500).json({ error: "errorServer" })
+    return res.status(500).json({ error: "serverError" })
   }
 }

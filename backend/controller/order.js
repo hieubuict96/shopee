@@ -15,6 +15,6 @@ export async function getOrder(req, res) {
 
     return res.status(200).json({ productsOrder });
   } catch (error) {
-    return res.status(500).json({ error: "errorServer" });
+    return res.status(500).json({ error: "serverError" });
   }
 }
